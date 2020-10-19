@@ -53,7 +53,7 @@ This fork contains the following test cases:
       ...
    }
    ```
-    **see test class InterfaceRelationTest.java**
+    The test creates and then deletes an inventory having some products (<a href="https://github.com/didierschlegel/test-jdo/blob/master/src/test/java/org/datanucleus/test/InterfaceRelationTest.java">InterfaceRelationTest.java</a>)
    ```java
                         //create an inventory with some products
 			tx.begin();
