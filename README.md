@@ -53,6 +53,7 @@ This fork contains the following test cases:
       ...
    }
    ```
+    **see test class InterfaceRelationTest.java**
    ```java
    //create an inventory with some products
 			tx.begin();
@@ -76,7 +77,7 @@ This fork contains the following test cases:
 			pm.close();
    ```
    The test case runs successfully with "javax.jdo.option.Optimistic" set to "false", but when changing it to "true" the following exception is thrown:
-   **see test class InterfaceRelationTest.java**
+  
    ```
    18:31:45,057 (main) WARN  [DataNucleus.Datastore.Persist] - Delete of object "mydomain.model.Product@565f390" using statement "DELETE FROM PRODUCT WHERE ID=?" failed : Referential integrity constraint violation: "PRODUCT_FK1: PUBLIC.PRODUCT FOREIGN KEY(INVENTORY_INVENTORY_NAME_EID) REFERENCES PUBLIC.INVENTORY(NAME) ('My Inventory')"; SQL statement:
    DELETE FROM INVENTORY WHERE "NAME"=? [23503-168]
