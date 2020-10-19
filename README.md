@@ -15,9 +15,7 @@ To run this, simply type "mvn clean compile test"
 This fork contains the following test cases:
 ===========================================
 1. Referential integrity constraint violation with datanucleus and bidirectional 1-N in optimistic locking when using interface type
- 
-   **see test class InterfaceRelationTest.java**
-   
+    
    There is a 1-N bidirectional relation whith dependent elements and where the mapped-by field is an interface-type.
    
    ```java
@@ -55,8 +53,30 @@ This fork contains the following test cases:
       ...
    }
    ```
-
+   ```java
+   //create an inventory with some products
+			tx.begin();
+			Inventory inv = new Inventory("My Inventory");
+			Product product = new Product("Sony Discman", "A standard discman from Sony", 200.00, inv);
+			Product book = new Product("Lord of the Rings by Tolkien", "The classic story", 49.99, inv);
+			inv.getProducts().add(product);
+			inv.getProducts().add(book);
+			pm.makePersistent(inv);
+			tx.commit();
+			Object inventoryId = pm.getObjectId(inv);
+			assertNotNull(inventoryId);
+			pm.close();
+			
+			//delete the inventory
+			pm = pmf.getPersistenceManager();
+			tx = pm.currentTransaction();
+			tx.begin();
+			pm.deletePersistent(pm.getObjectById(inventoryId));
+			tx.commit();
+			pm.close();
+   ```
    The test case runs successfully with "javax.jdo.option.Optimistic" set to "false", but when changing it to "true" the following exception is thrown:
+   **see test class InterfaceRelationTest.java**
    ```
    18:31:45,057 (main) WARN  [DataNucleus.Datastore.Persist] - Delete of object "mydomain.model.Product@565f390" using statement "DELETE FROM PRODUCT WHERE ID=?" failed : Referential integrity constraint violation: "PRODUCT_FK1: PUBLIC.PRODUCT FOREIGN KEY(INVENTORY_INVENTORY_NAME_EID) REFERENCES PUBLIC.INVENTORY(NAME) ('My Inventory')"; SQL statement:
    DELETE FROM INVENTORY WHERE "NAME"=? [23503-168]
