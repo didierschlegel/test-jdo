@@ -55,7 +55,7 @@ This fork contains the following test cases:
    ```
     **see test class InterfaceRelationTest.java**
    ```java
-   //create an inventory with some products
+                        //create an inventory with some products
 			tx.begin();
 			Inventory inv = new Inventory("My Inventory");
 			Product product = new Product("Sony Discman", "A standard discman from Sony", 200.00, inv);
@@ -99,7 +99,7 @@ This fork contains the following test cases:
     at org.datanucleus.TransactionImpl.internalPreCommit(TransactionImpl.java:397)
     at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:287)
     at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
-    at org.datanucleus.test.SimpleTest.testSimple(SimpleTest.java:53)
+    at org.datanucleus.test.InterfaceRelationTest.testSimple(SimpleTest.java:53)
     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -163,7 +163,7 @@ This fork contains the following test cases:
     at org.datanucleus.TransactionImpl.internalPreCommit(TransactionImpl.java:397)
     at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:287)
     at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
-    at org.datanucleus.test.SimpleTest.testSimple(SimpleTest.java:53)
+    at org.datanucleus.test.InterfaceRelationTest.testSimple(SimpleTest.java:53)
     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -227,7 +227,7 @@ This fork contains the following test cases:
     at org.datanucleus.TransactionImpl.internalPreCommit(TransactionImpl.java:397)
     at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:287)
     at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
-    at org.datanucleus.test.SimpleTest.testSimple(SimpleTest.java:53)
+    at org.datanucleus.test.InterfaceRelationTest.testSimple(SimpleTest.java:53)
     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -291,7 +291,7 @@ This fork contains the following test cases:
     at org.datanucleus.TransactionImpl.internalPreCommit(TransactionImpl.java:397)
     at org.datanucleus.TransactionImpl.commit(TransactionImpl.java:287)
     at org.datanucleus.api.jdo.JDOTransaction.commit(JDOTransaction.java:107)
-    at org.datanucleus.test.SimpleTest.testSimple(SimpleTest.java:53)
+    at org.datanucleus.test.InterfaceRelationTest.testSimple(SimpleTest.java:53)
     at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
     at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
     at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
