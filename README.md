@@ -15,7 +15,9 @@ To run this, simply type "mvn clean compile test"
 This fork contains the following test cases:
 ===========================================
 1. Referential integrity constraint violation with datanucleus and bidirectional 1-N in optimistic locking when using interface type
-
+ 
+   **see test class InterfaceRelationTest.java**
+   
    There is a 1-N bidirectional relation whith dependent elements and where the mapped-by field is an interface-type.
    
    ```java
