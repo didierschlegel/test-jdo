@@ -16,7 +16,7 @@ import org.junit.Test;
 import mydomain.model.Inventory;
 import mydomain.model.Product;
 
-public class SimpleTest {
+public class InterfaceRelationTest {
 	@Test
 	public void testSimple() {
 		NucleusLogger.GENERAL.info(">> test START");
