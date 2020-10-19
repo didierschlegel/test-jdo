@@ -24,6 +24,7 @@ public class InterfaceRelationTest {
 		PersistenceManager pm = pmf.getPersistenceManager();
 		Transaction tx = pm.currentTransaction();
 		try {
+			//create an inventory with some products
 			tx.begin();
 			Inventory inv = new Inventory("My Inventory");
 			Product product = new Product("Sony Discman", "A standard discman from Sony", 200.00, inv);
@@ -36,6 +37,7 @@ public class InterfaceRelationTest {
 			assertNotNull(inventoryId);
 			pm.close();
 			
+			//make sure the inventory and the products were successfully persisted
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
@@ -46,6 +48,7 @@ public class InterfaceRelationTest {
 			tx.commit();
 			pm.close();
 			
+			//delete the inventory
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
@@ -53,6 +56,7 @@ public class InterfaceRelationTest {
 			tx.commit();
 			pm.close();
 			
+			//make sure the inventory and the dependent products were successfully deleted
 			pm = pmf.getPersistenceManager();
 			tx = pm.currentTransaction();
 			tx.begin();
